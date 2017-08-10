@@ -10,6 +10,13 @@ import configureStore from "../shared/configureStore";
 import App from "../shared/App";
 import "source-map-support/register";
 
+
+import bodyParser from 'body-parser';
+import jwt from 'express-jwt'
+import graphql from 'graphql'
+//import Schema from './server/schema';
+import { graphqlExpress, graphiqlExpress } from 'graphql-server-express'
+
 const app = express();
 
 app.use(cors());
@@ -74,3 +81,6 @@ app.get("*", (req, res, next) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is listening");
 });
+
+
+
