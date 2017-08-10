@@ -14,7 +14,7 @@ import "source-map-support/register";
 import bodyParser from 'body-parser';
 import jwt from 'express-jwt'
 import graphql from 'graphql'
-//import Schema from './server/schema';
+//import Schema from './schema';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express'
 
 const app = express();
@@ -83,9 +83,21 @@ app.listen(process.env.PORT || 3000, () => {
 });
 
 
-
-
 const server = express();
+
+server.use('/graphql', bodyParser.json(), graphqlExpress((req) => {
+    // console.log(req)
+    return {
+        schema: Schema,
+        rootValue: req,
+    }
+}));
+
+server.use('/graphiql', graphiqlExpress({
+    endpointURL: '/graphql'
+}));
+
+
 server.listen(process.env.PORT || 4000, () => {
   console.log("Server2 is listening");
 });

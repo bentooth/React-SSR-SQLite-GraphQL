@@ -54165,7 +54165,7 @@ var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/server/index.js",
 
 
 
-//import Schema from './server/schema';
+//import Schema from './schema';
 
 
 var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
@@ -54233,6 +54233,19 @@ app.listen(process.env.PORT || 3000, function () {
 });
 
 var server = __WEBPACK_IMPORTED_MODULE_0_express___default()();
+
+server.use('/graphql', __WEBPACK_IMPORTED_MODULE_11_body_parser___default.a.json(), Object(__WEBPACK_IMPORTED_MODULE_14_graphql_server_express__["graphqlExpress"])(function (req) {
+  // console.log(req)
+  return {
+    schema: Schema,
+    rootValue: req
+  };
+}));
+
+server.use('/graphiql', Object(__WEBPACK_IMPORTED_MODULE_14_graphql_server_express__["graphiqlExpress"])({
+  endpointURL: '/graphql'
+}));
+
 server.listen(process.env.PORT || 4000, function () {
   console.log("Server2 is listening");
 });

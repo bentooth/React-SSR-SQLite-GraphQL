@@ -15,7 +15,7 @@ import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 //import { jwtSecret, encrypt, decrypt } from '../constants.js';
 
-export const jwtSecret = 'd6cb235e-9718-4a95-ac3a-19180a8c2e90';
+const jwtSecret = 'd6cb235e-9718-4a95-ac3a-19180a8c2e90';
 const algorithm = 'aes-256-ctr';
 const privateKey = '37LvDSm4XvjYOh9Y';
 

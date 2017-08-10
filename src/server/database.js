@@ -2,7 +2,7 @@ import Sequelize from 'sequelize';
 
 const db = new Sequelize('scr', null, null, {
   dialect: 'sqlite',
-  storage: './scr.sqlite',
+  storage: '../scr.sqlite',
 });
 
 const UserModel = db.define('user', {
