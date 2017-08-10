@@ -84,3 +84,8 @@ app.listen(process.env.PORT || 3000, () => {
 
 
 
+
+const server = express();
+server.listen(process.env.PORT || 4000, () => {
+  console.log("Server2 is listening");
+});

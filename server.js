@@ -54232,6 +54232,11 @@ app.listen(process.env.PORT || 3000, function () {
   console.log("Server is listening");
 });
 
+var server = __WEBPACK_IMPORTED_MODULE_0_express___default()();
+server.listen(process.env.PORT || 4000, function () {
+  console.log("Server2 is listening");
+});
+
 /***/ }),
 /* 384 */
 /***/ (function(module, exports, __webpack_require__) {
