@@ -1,4 +1,4 @@
-import Home from "./home";
+import Home from "./album";
 
 const routes = [
   {

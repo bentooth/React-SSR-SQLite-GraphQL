@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchNews } from "../ducks";
-import NewsList from "./NewsList";
+import NewsList from "./AlbumList";
 
 class News extends Component {
   static initialAction() {
