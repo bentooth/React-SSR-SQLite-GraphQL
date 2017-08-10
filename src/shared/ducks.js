@@ -1,15 +1,15 @@
 import "isomorphic-fetch";
 
 // Actions
-const FETCH_NEWS_REQUEST = "FETCH_NEWS_REQUEST";
-const FETCH_NEWS_SUCCESS = "FETCH_NEWS_SUCCESS";
-const FETCH_NEWS_FAILURE = "FETCH_NEWS_FAILURE";
+const FETCH_ALBUMS_REQUEST = "FETCH_ALBUMS_REQUEST";
+const FETCH_ALBUMS_SUCCESS = "FETCH_ALBUMS_SUCCESS";
+const FETCH_ALBUMS_FAILURE = "FETCH_ALBUMS_FAILURE";
 
 // Reducer
 export default function reducer(state = {}, action) {
   switch (action.type) {
-    case FETCH_NEWS_SUCCESS:
-      return { ...state, news: action.payload };
+    case FETCH_ALBUMS_SUCCESS:
+      return { ...state, albums: action.payload };
 
     default:
       return state;
@@ -17,14 +17,14 @@ export default function reducer(state = {}, action) {
 }
 
 // Action Creators
-const requestNews = () => ({ type: FETCH_NEWS_REQUEST });
-const receivedNews = news => ({ type: FETCH_NEWS_SUCCESS, payload: news });
-const newsError = () => ({ type: FETCH_NEWS_FAILURE });
+const requestAlbums = () => ({ type: FETCH_ALBUMS_REQUEST });
+const receivedAlbums = albums => ({ type: FETCH_ALBUMS_SUCCESS, payload: albums });
+const albumsError = () => ({ type: FETCH_ALBUMS_FAILURE });
 
-export const fetchNews = () => (dispatch, getState) => {
-  dispatch(requestNews());
-  return fetch("http://localhost:3000/api/news")
+export const fetchAlbums = () => (dispatch, getState) => {
+  dispatch(requestAlbums());
+  return fetch("http://localhost:3000/api/albums")
     .then(response => response.json())
-    .then(news => dispatch(receivedNews(news)))
-    .catch(err => dispatch(newsError(err)));
+    .then(albums => dispatch(receivedAlbums(albums)))
+    .catch(err => dispatch(albumsError(err)));
 };

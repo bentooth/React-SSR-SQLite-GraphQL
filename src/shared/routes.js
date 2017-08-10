@@ -1,10 +1,10 @@
-import Home from "./album";
+import Albums from "./album";
 
 const routes = [
   {
     path: "/",
     exact: true,
-    component: Home
+    component: Albums
   }
 ];
 

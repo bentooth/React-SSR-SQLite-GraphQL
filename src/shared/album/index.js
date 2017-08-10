@@ -1,27 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchNews } from "../ducks";
-import NewsList from "./AlbumList";
+import { fetchAlbums } from "../ducks";
+import AlbumList from "./AlbumList";
 
-class News extends Component {
+class Albums extends Component {
   static initialAction() {
-    return fetchNews();
+    return fetchAlbums();
   }
 
   componentDidMount() {
-    if (!this.props.news) {
-      this.props.dispatch(News.initialAction());
+    if (!this.props.albums) {
+      this.props.dispatch(Albums.initialAction());
     }
   }
 
   render() {
-    const { news } = this.props;
-    return <NewsList news={news} />;
+    const { albums } = this.props;
+    return <AlbumList albums={albums} />;
   }
 }
 
 const mapStateToProps = state => ({
-  news: state.news
+  albums: state.albums
 });
 
-export default connect(mapStateToProps)(News);
+export default connect(mapStateToProps)(Albums);

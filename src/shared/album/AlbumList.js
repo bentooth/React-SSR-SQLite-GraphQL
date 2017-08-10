@@ -1,21 +1,16 @@
 import React from "react";
 //import "./NewsList.css";
 
-export default function NewsList({ news }) {
+export default function AlbumList({ albums }) {
   return (
-    <div className="newslist">
+    <div>
       <div className="header">
-        <strong>Wizard News</strong>
+        <strong>Albums</strong>
       </div>
-      {news &&
-        news.map(post =>
-          <div key={post.id}>
-            <p>
-              {post.id} ⬆ {post.title}
-            </p>
-            <small>
-              {post.upvotes} upvotes by {post.author}
-            </small>
+      {albums &&
+        albums.map(album =>
+          <div key={album.id}>
+            <p>{album.title}</p>
           </div>
         )}
     </div>

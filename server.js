@@ -18510,15 +18510,15 @@ var routes = [{
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = reducer;
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return fetchNews; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return fetchAlbums; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__);
 
 
 // Actions
-var FETCH_NEWS_REQUEST = "FETCH_NEWS_REQUEST";
-var FETCH_NEWS_SUCCESS = "FETCH_NEWS_SUCCESS";
-var FETCH_NEWS_FAILURE = "FETCH_NEWS_FAILURE";
+var FETCH_ALBUMS_REQUEST = "FETCH_ALBUMS_REQUEST";
+var FETCH_ALBUMS_SUCCESS = "FETCH_ALBUMS_SUCCESS";
+var FETCH_ALBUMS_FAILURE = "FETCH_ALBUMS_FAILURE";
 
 // Reducer
 function reducer() {
@@ -18526,8 +18526,8 @@ function reducer() {
   var action = arguments[1];
 
   switch (action.type) {
-    case FETCH_NEWS_SUCCESS:
-      return Object.assign({}, state, { news: action.payload });
+    case FETCH_ALBUMS_SUCCESS:
+      return Object.assign({}, state, { albums: action.payload });
 
     default:
       return state;
@@ -18535,25 +18535,25 @@ function reducer() {
 }
 
 // Action Creators
-var requestNews = function requestNews() {
-  return { type: FETCH_NEWS_REQUEST };
+var requestAlbums = function requestAlbums() {
+  return { type: FETCH_ALBUMS_REQUEST };
 };
-var receivedNews = function receivedNews(news) {
-  return { type: FETCH_NEWS_SUCCESS, payload: news };
+var receivedAlbums = function receivedAlbums(albums) {
+  return { type: FETCH_ALBUMS_SUCCESS, payload: albums };
 };
-var newsError = function newsError() {
-  return { type: FETCH_NEWS_FAILURE };
+var albumsError = function albumsError() {
+  return { type: FETCH_ALBUMS_FAILURE };
 };
 
-var fetchNews = function fetchNews() {
+var fetchAlbums = function fetchAlbums() {
   return function (dispatch, getState) {
-    dispatch(requestNews());
-    return fetch("http://localhost:3000/api/news").then(function (response) {
+    dispatch(requestAlbums());
+    return fetch("http://localhost:3000/api/albums").then(function (response) {
       return response.json();
-    }).then(function (news) {
-      return dispatch(receivedNews(news));
+    }).then(function (albums) {
+      return dispatch(receivedAlbums(albums));
     }).catch(function (err) {
-      return dispatch(newsError(err));
+      return dispatch(albumsError(err));
     });
   };
 };
@@ -19319,78 +19319,14 @@ var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
 app.use(__WEBPACK_IMPORTED_MODULE_1_cors___default()());
 app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static("public"));
 
-app.get("/api/news", function (req, res) {
+app.get("/api/albums", function (req, res) {
   res.json([{
     id: 1,
-    upvotes: 130,
-    title: "Fianto Duri, the complete tutorial",
-    author: "RubeusH",
+    title: "Album 1",
     date: new Date("2017-04-14T15:30:00.000Z")
   }, {
     id: 2,
-    upvotes: 126,
-    title: "Ordinary Wizarding Levels study guide",
-    author: "BathBabb",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 3,
-    upvotes: 114,
-    title: "Is muggle-baiting ever acceptable?",
-    author: "Falco",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 4,
-    upvotes: 97,
-    title: "Untransfiguration classes to become compulsory at Hogwarts",
-    author: "Baddock",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 5,
-    upvotes: 85,
-    title: "Cracking the Aurologist Interview ",
-    author: "Hetty",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 6,
-    upvotes: 74,
-    title: "Conserving waterplants cheatsheet.",
-    author: "Otto",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 7,
-    upvotes: 66,
-    title: "The Pragmatic Dragon Feeder",
-    author: "Baruffio",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 8,
-    upvotes: 50,
-    title: "The complete quidditch statistics",
-    author: "Hbeery",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 9,
-    upvotes: 34,
-    title: "Cracking the Aurologist Interview ",
-    author: "Marcusb",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 10,
-    upvotes: 29,
-    title: "Could wizards prevent WW3?",
-    author: "Cuthbert",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 11,
-    upvotes: 20,
-    title: "ASK WN: What do you use to digitalize your scrolls?",
-    author: "Alphard",
-    date: new Date("2017-04-14T15:30:00.000Z")
-  }, {
-    id: 12,
-    upvotes: 16,
-    title: "Show WN: Wand-Extinguishing Protection",
-    author: "Humphrey22",
+    title: "Album 2",
     date: new Date("2017-04-14T15:30:00.000Z")
   }]);
 });
@@ -19411,7 +19347,7 @@ app.get("*", function (req, res, next) {
       __WEBPACK_IMPORTED_MODULE_4_react_redux__["a" /* Provider */],
       { store: store, __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 47
         },
         __self: _this
       },
@@ -19419,14 +19355,14 @@ app.get("*", function (req, res, next) {
         __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["b" /* StaticRouter */],
         { location: req.url, context: context, __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 48
           },
           __self: _this
         },
         __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__shared_App__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 49
           },
           __self: _this
         })
@@ -42945,28 +42881,28 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var News = function (_Component) {
-  _inherits(News, _Component);
+var Albums = function (_Component) {
+  _inherits(Albums, _Component);
 
-  function News() {
-    _classCallCheck(this, News);
+  function Albums() {
+    _classCallCheck(this, Albums);
 
-    return _possibleConstructorReturn(this, (News.__proto__ || Object.getPrototypeOf(News)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Albums.__proto__ || Object.getPrototypeOf(Albums)).apply(this, arguments));
   }
 
-  _createClass(News, [{
+  _createClass(Albums, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (!this.props.news) {
-        this.props.dispatch(News.initialAction());
+      if (!this.props.albums) {
+        this.props.dispatch(Albums.initialAction());
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var news = this.props.news;
+      var albums = this.props.albums;
 
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__AlbumList__["a" /* default */], { news: news, __source: {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__AlbumList__["a" /* default */], { albums: albums, __source: {
           fileName: _jsxFileName,
           lineNumber: 19
         },
@@ -42976,20 +42912,20 @@ var News = function (_Component) {
   }], [{
     key: "initialAction",
     value: function initialAction() {
-      return Object(__WEBPACK_IMPORTED_MODULE_2__ducks__["b" /* fetchNews */])();
+      return Object(__WEBPACK_IMPORTED_MODULE_2__ducks__["b" /* fetchAlbums */])();
     }
   }]);
 
-  return News;
+  return Albums;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    news: state.news
+    albums: state.albums
   };
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps)(News));
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps)(Albums));
 
 /***/ }),
 /* 353 */
@@ -46387,21 +46323,22 @@ Request.prototype.clone = function() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = NewsList;
+/* harmony export (immutable) */ __webpack_exports__["a"] = AlbumList;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/album/AlbumList.js";
 
 //import "./NewsList.css";
 
-function NewsList(_ref) {
+function AlbumList(_ref) {
   var _this = this;
 
-  var news = _ref.news;
+  var albums = _ref.albums;
 
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     "div",
-    { className: "newslist", __source: {
+    {
+      __source: {
         fileName: _jsxFileName,
         lineNumber: 6
       },
@@ -46424,13 +46361,13 @@ function NewsList(_ref) {
           },
           __self: this
         },
-        "Wizard News"
+        "Albums"
       )
     ),
-    news && news.map(function (post) {
+    albums && albums.map(function (album) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "div",
-        { key: post.id, __source: {
+        { key: album.id, __source: {
             fileName: _jsxFileName,
             lineNumber: 12
           },
@@ -46445,22 +46382,7 @@ function NewsList(_ref) {
             },
             __self: _this
           },
-          post.id,
-          " \u2B06 ",
-          post.title
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "small",
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 16
-            },
-            __self: _this
-          },
-          post.upvotes,
-          " upvotes by ",
-          post.author
+          album.title
         )
       );
     })
