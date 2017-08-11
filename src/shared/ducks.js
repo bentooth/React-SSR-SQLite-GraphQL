@@ -23,7 +23,7 @@ const albumsError = () => ({ type: FETCH_ALBUMS_FAILURE });
 
 export const fetchAlbums = () => (dispatch, getState) => {
   dispatch(requestAlbums());
-  return fetch("http://localhost:3000/api/albums")
+  return fetch("http://localhost:4000/graphql?query={products{id,name}}")
     .then(response => response.json())
     .then(albums => dispatch(receivedAlbums(albums)))
     .catch(err => dispatch(albumsError(err)));

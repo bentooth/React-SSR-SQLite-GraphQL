@@ -13,25 +13,8 @@ import {
 } from 'graphql';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
-//import { jwtSecret, encrypt, decrypt } from '../constants.js';
+import { jwtSecret, encrypt, decrypt } from './constants.js';
 
-const jwtSecret = 'd6cb235e-9718-4a95-ac3a-19180a8c2e90';
-const algorithm = 'aes-256-ctr';
-const privateKey = '37LvDSm4XvjYOh9Y';
-
-const decrypt = function (password) {
-    var decipher = crypto.createDecipher(algorithm, privateKey);
-    var dec = decipher.update(password, 'hex', 'utf8');
-    dec += decipher.final('utf8');
-    return dec;
-}
-
-const encrypt = function (password) {
-    var cipher = crypto.createCipher(algorithm, privateKey);
-    var crypted = cipher.update(password, 'utf8', 'hex');
-    crypted += cipher.final('hex');
-    return crypted;
-}
 
 const getTokenFromUser = function (user) {
     if (!user) return null;

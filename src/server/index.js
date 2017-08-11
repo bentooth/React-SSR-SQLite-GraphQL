@@ -14,7 +14,7 @@ import "source-map-support/register";
 import bodyParser from 'body-parser';
 import jwt from 'express-jwt'
 import graphql from 'graphql'
-//import Schema from './schema';
+import Schema from './schema';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express'
 
 const app = express();

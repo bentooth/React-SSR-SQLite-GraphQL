@@ -12260,7 +12260,7 @@ var albumsError = function albumsError() {
 var fetchAlbums = function fetchAlbums() {
   return function (dispatch, getState) {
     dispatch(requestAlbums());
-    return fetch("http://localhost:3000/api/albums").then(function (response) {
+    return fetch("http://localhost:4000/graphql?query={products{id,name}}").then(function (response) {
       return response.json();
     }).then(function (albums) {
       return dispatch(receivedAlbums(albums));
@@ -28673,61 +28673,20 @@ var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/album/Albu
 //import "./NewsList.css";
 
 function AlbumList(_ref) {
-  var _this = this;
-
   var albums = _ref.albums;
 
+  console.log(albums);
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     "div",
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 6
+        lineNumber: 7
       },
       __self: this
     },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      { className: "header", __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        },
-        __self: this
-      },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "strong",
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 8
-          },
-          __self: this
-        },
-        "Albums"
-      )
-    ),
-    albums && albums.map(function (album) {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
-        { key: album.id, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          },
-          __self: _this
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "p",
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 13
-            },
-            __self: _this
-          },
-          album.title
-        )
-      );
-    })
+    albums.data.products[0].name,
+    albums.data.products[1].name
   );
 }
 
