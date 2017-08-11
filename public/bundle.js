@@ -12228,9 +12228,9 @@ Link.contextTypes = {
 
 
 // Actions
-var FETCH_ALBUMS_REQUEST = "FETCH_ALBUMS_REQUEST";
-var FETCH_ALBUMS_SUCCESS = "FETCH_ALBUMS_SUCCESS";
-var FETCH_ALBUMS_FAILURE = "FETCH_ALBUMS_FAILURE";
+var FETCH_ALBUMS_REQUEST = 'FETCH_ALBUMS_REQUEST';
+var FETCH_ALBUMS_SUCCESS = 'FETCH_ALBUMS_SUCCESS';
+var FETCH_ALBUMS_FAILURE = 'FETCH_ALBUMS_FAILURE';
 
 // Reducer
 function reducer() {
@@ -12260,7 +12260,7 @@ var albumsError = function albumsError() {
 var fetchAlbums = function fetchAlbums() {
   return function (dispatch, getState) {
     dispatch(requestAlbums());
-    return fetch("http://localhost:4000/graphql?query={products{id,name}}").then(function (response) {
+    return fetch('http://localhost:4000/graphql?query={products{id,name}}').then(function (response) {
       return response.json();
     }).then(function (albums) {
       return dispatch(receivedAlbums(albums));
@@ -12284,7 +12284,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_configureStore__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_App__ = __webpack_require__(267);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/browser/index.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/browser/index.js';
 
 
 
@@ -12319,7 +12319,7 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
       __self: this
     })
   )
-), document.getElementById("root"));
+), document.getElementById('root'));
 
 /***/ }),
 /* 111 */
@@ -28517,7 +28517,7 @@ module.exports = self.fetch.bind(self);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(268);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/App.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/shared/App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -28530,7 +28530,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-//import "./App.css";
+//import './App.css';
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -28542,12 +28542,12 @@ var App = function (_Component) {
   }
 
   _createClass(App, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
+        'div',
         {
           __source: {
             fileName: _jsxFileName,
@@ -28582,7 +28582,7 @@ var App = function (_Component) {
 
 
 var routes = [{
-  path: "/",
+  path: '/',
   exact: true,
   component: __WEBPACK_IMPORTED_MODULE_0__album__["a" /* default */]
 }];
@@ -28599,7 +28599,7 @@ var routes = [{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ducks__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__AlbumList__ = __webpack_require__(270);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/album/index.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/shared/album/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -28624,14 +28624,14 @@ var Albums = function (_Component) {
   }
 
   _createClass(Albums, [{
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
       if (!this.props.albums) {
         this.props.dispatch(Albums.initialAction());
       }
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var albums = this.props.albums;
 
@@ -28643,7 +28643,7 @@ var Albums = function (_Component) {
       });
     }
   }], [{
-    key: "initialAction",
+    key: 'initialAction',
     value: function initialAction() {
       return Object(__WEBPACK_IMPORTED_MODULE_2__ducks__["b" /* fetchAlbums */])();
     }
@@ -28668,16 +28668,16 @@ var mapStateToProps = function mapStateToProps(state) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = AlbumList;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/album/AlbumList.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/shared/album/AlbumList.js';
 
-//import "./NewsList.css";
+//import './NewsList.css';
 
 function AlbumList(_ref) {
   var albums = _ref.albums;
 
   console.log(albums);
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    "div",
+    'div',
     {
       __source: {
         fileName: _jsxFileName,

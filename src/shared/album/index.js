@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchAlbums } from "../ducks";
-import AlbumList from "./AlbumList";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchAlbums } from '../ducks';
+import AlbumList from './AlbumList';
 
 class Albums extends Component {
   static initialAction() {

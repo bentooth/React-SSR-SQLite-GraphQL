@@ -1,9 +1,9 @@
-import "isomorphic-fetch";
+import 'isomorphic-fetch';
 
 // Actions
-const FETCH_ALBUMS_REQUEST = "FETCH_ALBUMS_REQUEST";
-const FETCH_ALBUMS_SUCCESS = "FETCH_ALBUMS_SUCCESS";
-const FETCH_ALBUMS_FAILURE = "FETCH_ALBUMS_FAILURE";
+const FETCH_ALBUMS_REQUEST = 'FETCH_ALBUMS_REQUEST';
+const FETCH_ALBUMS_SUCCESS = 'FETCH_ALBUMS_SUCCESS';
+const FETCH_ALBUMS_FAILURE = 'FETCH_ALBUMS_FAILURE';
 
 // Reducer
 export default function reducer(state = {}, action) {
@@ -23,7 +23,7 @@ const albumsError = () => ({ type: FETCH_ALBUMS_FAILURE });
 
 export const fetchAlbums = () => (dispatch, getState) => {
   dispatch(requestAlbums());
-  return fetch("http://localhost:4000/graphql?query={products{id,name}}")
+  return fetch('http://localhost:4000/graphql?query={products{id,name}}')
     .then(response => response.json())
     .then(albums => dispatch(receivedAlbums(albums)))
     .catch(err => dispatch(albumsError(err)));

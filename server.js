@@ -91,7 +91,7 @@ module.exports = require("react-router-dom");
 
 
 var routes = [{
-  path: "/",
+  path: '/',
   exact: true,
   component: __WEBPACK_IMPORTED_MODULE_0__album__["a" /* default */]
 }];
@@ -110,9 +110,9 @@ var routes = [{
 
 
 // Actions
-var FETCH_ALBUMS_REQUEST = "FETCH_ALBUMS_REQUEST";
-var FETCH_ALBUMS_SUCCESS = "FETCH_ALBUMS_SUCCESS";
-var FETCH_ALBUMS_FAILURE = "FETCH_ALBUMS_FAILURE";
+var FETCH_ALBUMS_REQUEST = 'FETCH_ALBUMS_REQUEST';
+var FETCH_ALBUMS_SUCCESS = 'FETCH_ALBUMS_SUCCESS';
+var FETCH_ALBUMS_FAILURE = 'FETCH_ALBUMS_FAILURE';
 
 // Reducer
 function reducer() {
@@ -142,7 +142,7 @@ var albumsError = function albumsError() {
 var fetchAlbums = function fetchAlbums() {
   return function (dispatch, getState) {
     dispatch(requestAlbums());
-    return fetch("http://localhost:4000/graphql?query={products{id,name}}").then(function (response) {
+    return fetch('http://localhost:4000/graphql?query={products{id,name}}').then(function (response) {
       return response.json();
     }).then(function (albums) {
       return dispatch(receivedAlbums(albums));
@@ -198,9 +198,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__schema__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_graphql_server_express__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_graphql_server_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_graphql_server_express__);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/server/index.js",
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/server/index.js',
     _this = this;
-
 
 
 
@@ -222,21 +221,21 @@ var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/server/index.js",
 var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
 
 app.use(__WEBPACK_IMPORTED_MODULE_1_cors___default()());
-app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static("public"));
+app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static('public'));
 
-app.get("/api/albums", function (req, res) {
+app.get('/api/albums', function (req, res) {
   res.json([{
     id: 1,
-    title: "Album 1",
-    date: new Date("2017-04-14T15:30:00.000Z")
+    title: 'Album 1',
+    date: new Date('2017-04-14T15:30:00.000Z')
   }, {
     id: 2,
-    title: "Album 2",
-    date: new Date("2017-04-14T15:30:00.000Z")
+    title: 'Album 2',
+    date: new Date('2017-04-14T15:30:00.000Z')
   }]);
 });
 
-app.get("*", function (req, res, next) {
+app.get('*', function (req, res, next) {
   var store = Object(__WEBPACK_IMPORTED_MODULE_8__shared_configureStore__["a" /* default */])();
 
   var promises = __WEBPACK_IMPORTED_MODULE_7__shared_routes__["a" /* default */].reduce(function (acc, route) {
@@ -252,7 +251,7 @@ app.get("*", function (req, res, next) {
       __WEBPACK_IMPORTED_MODULE_4_react_redux__["Provider"],
       { store: store, __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 52
         },
         __self: _this
       },
@@ -260,14 +259,14 @@ app.get("*", function (req, res, next) {
         __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["StaticRouter"],
         { location: req.url, context: context, __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 53
           },
           __self: _this
         },
         __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__shared_App__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 54
           },
           __self: _this
         })
@@ -275,12 +274,12 @@ app.get("*", function (req, res, next) {
     ));
 
     var initialData = store.getState();
-    res.send("\n        <!DOCTYPE html>\n        <html>\n          <head>\n            <title>W Combinator</title>\n            <link rel=\"stylesheet\" href=\"/css/main.css\">\n            <script src=\"/bundle.js\" defer></script>\n            <script>window.__initialData__ = " + __WEBPACK_IMPORTED_MODULE_6_serialize_javascript___default()(initialData) + "</script>\n          </head>\n\n          <body>\n            <div id=\"root\">" + markup + "</div>\n          </body>\n        </html>\n      ");
+    res.send('\n        <!DOCTYPE html>\n        <html>\n          <head>\n            <title>W Combinator</title>\n            <link rel=\'stylesheet\' href=\'/css/main.css\'>\n            <script src=\'/bundle.js\' defer></script>\n            <script>window.__initialData__ = ' + __WEBPACK_IMPORTED_MODULE_6_serialize_javascript___default()(initialData) + '</script>\n          </head>\n\n          <body>\n            <div id=\'root\'>' + markup + '</div>\n          </body>\n        </html>\n      ');
   }).catch(next);
 });
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log("Server is listening");
+  console.log('==> 💻  Application server started on: http://localhost:3000');
 });
 
 var server = __WEBPACK_IMPORTED_MODULE_0_express___default()();
@@ -298,7 +297,7 @@ server.use('/graphiql', Object(__WEBPACK_IMPORTED_MODULE_15_graphql_server_expre
 }));
 
 server.listen(process.env.PORT || 4000, function () {
-  console.log("Server2 is listening");
+  console.log('==> 💻  GraphQL server started on: http://localhost:4000');
 });
 
 /***/ }),
@@ -336,7 +335,7 @@ module.exports = require("serialize-javascript");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ducks__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__AlbumList__ = __webpack_require__(14);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/album/index.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/shared/album/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -361,14 +360,14 @@ var Albums = function (_Component) {
   }
 
   _createClass(Albums, [{
-    key: "componentDidMount",
+    key: 'componentDidMount',
     value: function componentDidMount() {
       if (!this.props.albums) {
         this.props.dispatch(Albums.initialAction());
       }
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var albums = this.props.albums;
 
@@ -380,7 +379,7 @@ var Albums = function (_Component) {
       });
     }
   }], [{
-    key: "initialAction",
+    key: 'initialAction',
     value: function initialAction() {
       return Object(__WEBPACK_IMPORTED_MODULE_2__ducks__["b" /* fetchAlbums */])();
     }
@@ -411,16 +410,16 @@ module.exports = require("isomorphic-fetch");
 /* harmony export (immutable) */ __webpack_exports__["a"] = AlbumList;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/album/AlbumList.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/shared/album/AlbumList.js';
 
-//import "./NewsList.css";
+//import './NewsList.css';
 
 function AlbumList(_ref) {
   var albums = _ref.albums;
 
   console.log(albums);
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    "div",
+    'div',
     {
       __source: {
         fileName: _jsxFileName,
@@ -475,7 +474,7 @@ module.exports = require("redux-thunk");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(3);
-var _jsxFileName = "/home/benjamin/WebstormProjects/SCR-V4/src/shared/App.js";
+var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/shared/App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -488,7 +487,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-//import "./App.css";
+//import './App.css';
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -500,12 +499,12 @@ var App = function (_Component) {
   }
 
   _createClass(App, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "div",
+        'div',
         {
           __source: {
             fileName: _jsxFileName,

@@ -1,8 +1,8 @@
-import Albums from "./album";
+import Albums from './album';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     exact: true,
     component: Albums
   }

@@ -1,16 +1,14 @@
-import express from "express";
-import cors from "cors";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { Provider } from "react-redux";
-import { StaticRouter, matchPath } from "react-router-dom";
-import serialize from "serialize-javascript";
-import routes from "../shared/routes";
-import configureStore from "../shared/configureStore";
-import App from "../shared/App";
-import "source-map-support/register";
-
-
+import express from 'express';
+import cors from 'cors';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import { StaticRouter, matchPath } from 'react-router-dom';
+import serialize from 'serialize-javascript';
+import routes from '../shared/routes';
+import configureStore from '../shared/configureStore';
+import App from '../shared/App';
+import 'source-map-support/register';
 import bodyParser from 'body-parser';
 import jwt from 'express-jwt'
 import graphql from 'graphql'
@@ -20,24 +18,24 @@ import { graphqlExpress, graphiqlExpress } from 'graphql-server-express'
 const app = express();
 
 app.use(cors());
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.get("/api/albums", (req, res) => {
+app.get('/api/albums', (req, res) => {
   res.json([
     {
       id: 1,
-      title: "Album 1",
-      date: new Date("2017-04-14T15:30:00.000Z")
+      title: 'Album 1',
+      date: new Date('2017-04-14T15:30:00.000Z')
     },
     {
       id: 2,
-      title: "Album 2",
-      date: new Date("2017-04-14T15:30:00.000Z")
+      title: 'Album 2',
+      date: new Date('2017-04-14T15:30:00.000Z')
     }
   ]);
 });
 
-app.get("*", (req, res, next) => {
+app.get('*', (req, res, next) => {
   const store = configureStore();
 
   const promises = routes.reduce((acc, route) => {
@@ -64,13 +62,13 @@ app.get("*", (req, res, next) => {
         <html>
           <head>
             <title>W Combinator</title>
-            <link rel="stylesheet" href="/css/main.css">
-            <script src="/bundle.js" defer></script>
+            <link rel='stylesheet' href='/css/main.css'>
+            <script src='/bundle.js' defer></script>
             <script>window.__initialData__ = ${serialize(initialData)}</script>
           </head>
 
           <body>
-            <div id="root">${markup}</div>
+            <div id='root'>${markup}</div>
           </body>
         </html>
       `);
@@ -79,7 +77,7 @@ app.get("*", (req, res, next) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is listening");
+  console.log('==> 💻  Application server started on: http://localhost:3000');
 });
 
 
@@ -99,5 +97,5 @@ server.use('/graphiql', graphiqlExpress({
 
 
 server.listen(process.env.PORT || 4000, () => {
-  console.log("Server2 is listening");
+  console.log('==> 💻  GraphQL server started on: http://localhost:4000');
 });
