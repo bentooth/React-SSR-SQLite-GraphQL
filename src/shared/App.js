@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Albums from './album'
 import Home from './home'
+import Login from './login'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <div>
         <Route exact path="/" component={Home}/>
         <Route path="/albums" component={Albums}/>
+        <Route exact path="/login" component={Login}/>
       </div>
     );
   }
