@@ -61,7 +61,7 @@ app.get('*', (req, res, next) => {
         <!DOCTYPE html>
         <html>
           <head>
-            <title>W Combinator</title>
+            <title>SCR V3</title>
             <link rel='stylesheet' href='/css/main.css'>
             <script src='/bundle.js' defer></script>
             <script>window.__initialData__ = ${serialize(initialData)}</script>
