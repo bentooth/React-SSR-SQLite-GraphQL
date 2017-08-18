@@ -49,11 +49,11 @@ app.get('*', (req, res, next) => {
     .then(() => {
       const context = {};
       const markup = renderToString(
-        <Provider store={store}>
-          <StaticRouter location={req.url} context={context}>
+        <StaticRouter location={req.url} context={context}>
+          <Provider store={store}>
             <App />
-          </StaticRouter>
-        </Provider>
+          </Provider>
+        </StaticRouter>
       );
 
       const initialData = store.getState();

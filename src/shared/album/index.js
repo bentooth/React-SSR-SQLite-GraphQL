@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchAlbums } from '../ducks';
 import AlbumList from './AlbumList';
 
@@ -24,4 +25,4 @@ const mapStateToProps = state => ({
   albums: state.albums
 });
 
-export default connect(mapStateToProps)(Albums);
+export default withRouter(connect(mapStateToProps)(Albums));
