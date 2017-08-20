@@ -439,16 +439,16 @@ app.get('*', function (req, res, next) {
   Promise.all(promises).then(function () {
     var context = {};
     var markup = Object(__WEBPACK_IMPORTED_MODULE_3_react_dom_server__["renderToString"])(__WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-      __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["StaticRouter"],
-      { location: req.url, context: context, __source: {
+      __WEBPACK_IMPORTED_MODULE_4_react_redux__["Provider"],
+      { store: store, __source: {
           fileName: _jsxFileName,
           lineNumber: 52
         },
         __self: _this
       },
       __WEBPACK_IMPORTED_MODULE_2_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_4_react_redux__["Provider"],
-        { store: store, __source: {
+        __WEBPACK_IMPORTED_MODULE_5_react_router_dom__["StaticRouter"],
+        { location: req.url, context: context, __source: {
             fileName: _jsxFileName,
             lineNumber: 53
           },

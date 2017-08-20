@@ -49,11 +49,12 @@ app.get('*', (req, res, next) => {
     .then(() => {
       const context = {};
       const markup = renderToString(
-        <StaticRouter location={req.url} context={context}>
-          <Provider store={store}>
+        <Provider store={store}>
+          <StaticRouter location={req.url} context={context}>
             <App />
-          </Provider>
-        </StaticRouter>
+          </StaticRouter>
+        </Provider>
+
       );
 
       const initialData = store.getState();
@@ -84,15 +85,15 @@ app.listen(process.env.PORT || 3000, () => {
 const server = express();
 
 server.use('/graphql', bodyParser.json(), graphqlExpress((req) => {
-    // console.log(req)
-    return {
-        schema: Schema,
-        rootValue: req,
-    }
+  // console.log(req)
+  return {
+    schema: Schema,
+    rootValue: req,
+  }
 }));
 
 server.use('/graphiql', graphiqlExpress({
-    endpointURL: '/graphql'
+  endpointURL: '/graphql'
 }));
 
 

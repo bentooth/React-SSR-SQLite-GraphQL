@@ -12295,17 +12295,17 @@ var _jsxFileName = '/home/benjamin/WebstormProjects/SCR-V3/src/browser/index.js'
 var store = Object(__WEBPACK_IMPORTED_MODULE_4__shared_configureStore__["a" /* default */])(window.__initialData__);
 
 Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-  __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["a" /* BrowserRouter */],
-  {
-    __source: {
+  __WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* Provider */],
+  { store: store, __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
   },
   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* Provider */],
-    { store: store, __source: {
+    __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["a" /* BrowserRouter */],
+    {
+      __source: {
         fileName: _jsxFileName,
         lineNumber: 12
       },
